@@ -161,7 +161,7 @@ def get_all_crystals_with_id(healer_id):
     healer = validate_model(Healer, healer_id)
 
     crystals_response = []
-    for crystal in healer.crystal:
+    for crystal in healer.crystals:
         crystals_response.append(crystal.to_dic())
 
     return jsonify(crystals_response), 200
