@@ -19,7 +19,8 @@ def create_app(test_config=None):
     # set up database
     if not test_config:
         # environ is a method from os that returns a dictionary
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("SQLALCHEMY_DATABASE_URI")
+        # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("SQLALCHEMY_DATABASE_URI")
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("RENDER_DATABASE_URI")
     else:
         app.config['TESTING'] = True
         app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("SQLALCHEMY__TEST_DATABASE_URI")
